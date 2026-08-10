@@ -5,7 +5,12 @@ type: software
 authors:
   - family-names: Pereira
     given-names: Antonio
+version: 1.0.0
+date-released: 2026-08-10
+doi: 10.5281/zenodo.21877883
 repository-code: "https://github.com/squareshorts/general-admissibility-gating-law"
+repository-artifact: "https://github.com/squareshorts/general-admissibility-gating-law/releases/tag/v1.0.0"
+url: "https://doi.org/10.5281/zenodo.21877883"
 license: BSD-3-Clause
 keywords:
   - selective classification

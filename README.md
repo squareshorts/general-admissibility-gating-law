@@ -1,66 +1,56 @@
 # General Admissibility Gating Law
 
-Reproducible analyses for candidate-conditioned evaluation of post-positive gating in biomedical decision systems.
+Reproducible analysis package for candidate-conditioned evaluation of post-positive gating in biomedical decision systems.
 
-This repository accompanies the manuscript **Candidate-Conditioned Evaluation of Post-Positive Gating in Biomedical Decision Systems: Predictive Value, Utility, and Held-Out Validation**.
+## Overview
 
-## Scientific scope
+This repository supports the manuscript *Candidate-Conditioned Evaluation of Post-Positive Gating in Biomedical Decision Systems: Predictive Value, Utility, and Held-Out Validation*.
 
-The project evaluates a post-positive decision architecture in which a fixed detector produces candidate-positive events and a downstream gate determines which candidates are allowed to trigger action. The core candidate-conditioned quantities are
+The project studies a post-positive decision architecture in which a fixed detector produces candidate-positive events and a downstream gate determines whether those candidates are acted on or withheld. The central candidate-conditioned quantities are
 
-- `q1 = Pr(Q=1 | P=1, T=1)`, retention of true positive candidates;
-- `q0 = Pr(Q=1 | P=1, T=0)`, retention of false positive candidates;
-- `Delta_Q = q1 - q0`, the sign criterion for PPV enrichment under the stated nondegenerate conditions.
+- `q1 = Pr(Q=1 | P=1, T=1)`: retention of true positive candidates;
+- `q0 = Pr(Q=1 | P=1, T=0)`: retention of false positive candidates;
+- `Delta_Q = q1 - q0`: candidate-conditioned gate discrimination.
 
-The repository is intended to contain the frozen analytical checks, simulation code, empirical analyses, machine-readable outputs, figures, tables, and reproducibility audits used in the manuscript. Empirical evaluation uses the PhysioNet/Computing in Cardiology Challenge 2015 and PTB-XL datasets; raw source datasets are not redistributed here.
+For a fixed detector, positive predictive value improves if and only if `q1 > q0`. Expected loss follows a separate criterion that also depends on prevalence, detector performance, action costs, and the consequences of withholding.
 
-## Repository status
+## Empirical systems
 
-**Pre-submission reproducibility repository.** The public repository structure and release documentation are initialized, but the frozen analysis package must be synced from the local research project before the manuscript-linked `v1.0.0` release is created. Do not cite the moving `main` branch as the archival analysis version.
+The locked empirical analyses use two public biomedical datasets:
 
-## Planned structure
+1. PhysioNet/Computing in Cardiology Challenge 2015.
+2. PTB-XL v1.0.3.
 
-```text
-analysis/              analysis scripts and entry points
-config/frozen/         locked analysis configuration
-results/               machine-readable simulation and empirical outputs
-figures/               generated manuscript figures and figure-generation code
-tables/                machine-readable and rendered tables
-tests/                 numerical and reproducibility tests
-reproducibility/       evidence freeze and consistency-audit material
-manuscript/            manuscript-associated source snapshots
-docs/                  release and reproducibility documentation
-```
+Hidden Challenge test labels were not used.
 
-Each directory contains a README describing what belongs there and what must be frozen before release.
+## Repository layout
 
-## Data
+- `analysis/` — analysis entry points and implementation notes.
+- `config/` — frozen analysis settings and configuration records.
+- `results/` — machine-readable simulation and empirical outputs.
+- `figures/` — generated manuscript figures and figure-generation notes.
+- `tables/` — generated manuscript tables and table manifests.
+- `tests/` — numerical and consistency checks.
+- `reproducibility/` — evidence-freeze and audit records.
+- `manuscript/` — manuscript-facing materials.
+- `docs/` — project and reproducibility documentation.
 
-The raw datasets remain with their original providers:
+## Reproducibility status
 
-- PhysioNet/Computing in Cardiology Challenge 2015
-- PTB-XL v1.0.3
+The manuscript reports a frozen evidence package with deterministic stochastic seeds, locked empirical definitions, numerical consistency checks, and artifact/source checks. Repository files will be added in a way that preserves the frozen results rather than rerunning or retuning the held-out analyses.
 
-Hidden Challenge test labels were not used. Dataset-specific licenses and access conditions apply.
+## Data availability
 
-## Reproducibility target
+The source datasets are not redistributed here. They are publicly available from PhysioNet under their respective terms. Scripts and configuration files in this repository are intended to operate on locally obtained copies of those datasets.
 
-The manuscript-linked archival release should contain, at minimum:
+## Software environment
 
-1. the exact analysis scripts used for the reported results;
-2. frozen configuration files and deterministic seeds;
-3. machine-readable simulation and empirical outputs;
-4. figure and table generation code plus manifests;
-5. numerical consistency and artifact/source audits;
-6. dependency/environment specification;
-7. a tagged GitHub release (`v1.0.0`) archived in Zenodo with a persistent DOI.
-
-See `docs/release_checklist.md` and `docs/reproducibility.md`.
-
-## License
-
-Code in this repository is released under the BSD 3-Clause License unless otherwise stated. Dataset licenses remain with the original data providers.
+Python dependencies are listed in `requirements.txt`. Exact versions used for the archived manuscript release should be frozen before tagging the release.
 
 ## Citation
 
-A `CITATION.cff` file is included for software citation. The manuscript DOI and archival Zenodo DOI should be added once assigned.
+Citation metadata are provided in `CITATION.cff`. A DOI will be added after the manuscript release is archived in a permanent repository such as Zenodo.
+
+## License
+
+Code is released under the BSD 3-Clause License. Dataset licenses and terms remain those of the original data providers.

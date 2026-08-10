@@ -2,9 +2,9 @@
 
 Reproducible analysis package for candidate-conditioned evaluation of post-positive gating in biomedical decision systems.
 
-## Overview
+## Scope
 
-This repository supports the manuscript *Candidate-Conditioned Evaluation of Post-Positive Gating in Biomedical Decision Systems: Predictive Value, Utility, and Held-Out Validation*.
+This repository is intentionally limited to the material needed to reproduce the reported numerical results, figures, tables, and consistency checks. The manuscript LaTeX source is maintained separately and is not part of the reproducibility archive.
 
 The project studies a post-positive decision architecture in which a fixed detector produces candidate-positive events and a downstream gate determines whether those candidates are acted on or withheld. The central candidate-conditioned quantities are
 
@@ -25,31 +25,32 @@ Hidden Challenge test labels were not used.
 
 ## Repository layout
 
-- `analysis/` — analysis entry points and implementation notes.
-- `config/` — frozen analysis settings and configuration records.
-- `results/` — machine-readable simulation and empirical outputs.
-- `figures/` — generated manuscript figures and figure-generation notes.
-- `tables/` — generated manuscript tables and table manifests.
-- `tests/` — numerical and consistency checks.
-- `reproducibility/` — evidence-freeze and audit records.
-- `manuscript/` — manuscript-facing materials.
-- `docs/` — project and reproducibility documentation.
+- `analysis/` — deterministic analysis and figure-generation code.
+- `config/` — frozen thresholds, partitions, seeds, and cost definitions.
+- `results/` — machine-readable frozen simulation and empirical outputs.
+- `figures/` — reproducible figure outputs and figure manifest.
+- `tables/` — reproducible table outputs and table manifest.
+- `tests/` — numerical reconstruction and consistency checks.
+- `reproducibility/` — evidence-freeze record and audit outputs.
+- `docs/` — reproducibility and data-acquisition instructions.
 
-## Reproducibility status
+## Reproducibility policy
 
-The manuscript reports a frozen evidence package with deterministic stochastic seeds, locked empirical definitions, numerical consistency checks, and artifact/source checks. Repository files will be added in a way that preserves the frozen results rather than rerunning or retuning the held-out analyses.
+The archived release must reproduce the manuscript-facing results without retuning any empirical gate, detector threshold, split, cost scenario, or reported numerical result. Figures and tables are regenerated only from frozen machine-readable outputs or from deterministic scripts operating under the frozen configuration.
+
+The evidence freeze associated with the manuscript reports 34/34 passing tests, 39 numerical reconstruction checks, and 28 artifact/source checks at tolerance `1e-12`.
 
 ## Data availability
 
-The source datasets are not redistributed here. They are publicly available from PhysioNet under their respective terms. Scripts and configuration files in this repository are intended to operate on locally obtained copies of those datasets.
+The source datasets are not redistributed here. They are publicly available from PhysioNet under their respective terms. Scripts and configuration files operate on locally obtained copies of those datasets.
 
 ## Software environment
 
-Python dependencies are listed in `requirements.txt`. Exact versions used for the archived manuscript release should be frozen before tagging the release.
+Python dependencies are listed in `requirements.txt`. Exact package versions must be pinned in the manuscript release before tagging `v1.0.0`.
 
 ## Citation
 
-Citation metadata are provided in `CITATION.cff`. A DOI will be added after the manuscript release is archived in a permanent repository such as Zenodo.
+Citation metadata are provided in `CITATION.cff`. The DOI for the archived `v1.0.0` release will be added after deposition in Zenodo.
 
 ## License
 

@@ -65,9 +65,14 @@ Hidden Challenge test labels were not used. The repository contains only aggrega
 
 The guaranteed public reproduction target is the manuscript-facing numerical record and figures. The repository does not contain raw PhysioNet records, private data, or the manuscript LaTeX source. The original datasets remain subject to their provider terms.
 
-## Release
+## Archived release
 
-The manuscript-associated archival version will be tagged `v1.0.0`. After Zenodo assigns a DOI, the persistent identifier should be added to `CITATION.cff` and to the manuscript Data and Code Availability statement.
+The manuscript-associated reproducibility release is `v1.0.0`:
+
+- GitHub release: `https://github.com/squareshorts/general-admissibility-gating-law/releases/tag/v1.0.0`
+- Zenodo DOI: `10.5281/zenodo.21877883`
+
+The Zenodo record is the permanent archival version associated with the manuscript.
 
 ## License
 

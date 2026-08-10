@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If you use this software or analysis package, please cite the archived release and associated manuscript."
+title: "General Admissibility Gating Law: Reproducible Analysis Package"
+type: software
+authors:
+  - family-names: Pereira
+    given-names: Antonio
+repository-code: "https://github.com/squareshorts/general-admissibility-gating-law"
+license: BSD-3-Clause
+keywords:
+  - selective classification
+  - decision theory
+  - biomedical informatics
+  - admissibility gating
+  - reproducibility

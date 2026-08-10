@@ -1,0 +1,4 @@
+table,csv,markdown,source_data,description
+5,../tables/table5_empirical_datasets.csv,../tables/table5.md,dataset_characteristics.csv,Dataset characteristics and locked decision definitions
+6,../tables/table6_primary_empirical_metrics.csv,../tables/table6.md,main_metrics.csv;bootstrap_intervals.csv,Held-out gate properties and uncertainty
+7,../tables/table7_strategy_comparison.csv,../tables/table7.md,strategy_controls.csv;cost_grid.csv,Strategy controls and cost-grid dominance counts

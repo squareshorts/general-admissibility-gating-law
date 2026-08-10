@@ -1,29 +1,51 @@
-# Reproducibility notes
+# Reproducibility guide
 
-This repository is intended to preserve the exact analysis state associated with the manuscript release.
+## Figure-only reproduction
 
-## Principles
+The manuscript-facing figures can be reconstructed without redistributing the biomedical source datasets. Frozen empirical summaries are stored in `results/empirical/`, while the simulation inputs are regenerated deterministically from the code and fixed seed.
 
-- Held-out empirical definitions, thresholds, partitions, and cost scenarios must remain locked.
-- Regeneration of figures and tables must use machine-readable results rather than manual editing of reported values.
-- Any refactoring performed after the evidence freeze must preserve numerical outputs.
-- Dataset files are not redistributed; users must obtain them from the original providers.
+Run:
 
-## Determinism
+```bash
+python -m pip install -r requirements.txt
+python scripts/reproduce_figures.py
+```
 
-The manuscript reports deterministic seed `20260809` for stochastic analyses where applicable.
+This executes `scripts/run_simulations.py` followed by `scripts/make_figures.py` and writes canonical vector PDFs to `figures/`.
 
-## Release procedure
+## Numerical checks
 
-Before creating the manuscript release:
+```bash
+python -m unittest discover -s tests -v
+python scripts/check_theory.py
+python scripts/audit_empirical_results.py
+```
 
-1. Freeze exact dependency versions.
-2. Verify all analysis tests and numerical reconstruction checks.
-3. Regenerate all manuscript figures and tables from repository outputs.
-4. Verify figure/table manifests against the manuscript.
-5. Tag the exact release used for submission.
-6. Archive that release in Zenodo or another DOI-minting repository.
+In a repository clone without processed PhysioNet data, the data-reconstruction tests are skipped. The remaining tests and all checks based on frozen machine-readable outputs remain executable.
 
-## Archived outputs
+## Full empirical reconstruction
 
-The archived release should include machine-readable simulation and empirical results, frozen configuration files, figure and table manifests, and the outputs of the final reproducibility checks.
+Install the additional waveform dependency:
+
+```bash
+python -m pip install -r requirements-empirical.txt
+```
+
+Obtain the datasets according to `data/README.md`, then run the acquisition and empirical scripts as documented there. The full reconstruction path is intended to validate the locked empirical package, not to retune the detector or gate.
+
+## Frozen-policy rule
+
+The following are considered part of the evidence freeze and must not be changed when reproducing the reported results:
+
+- outcome-independent Challenge split;
+- PTB-XL official train/validation/test folds;
+- detector operating thresholds;
+- hard-gate definitions;
+- random-control seeds and acceptance matching;
+- bootstrap design;
+- prespecified expected-loss grid;
+- simulation seed `20260809`.
+
+## Data handling
+
+Raw and processed PhysioNet records are intentionally excluded from the repository. Only provenance instructions and frozen aggregate outputs are distributed.

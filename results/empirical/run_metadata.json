@@ -1,0 +1,13 @@
+{
+  "run_date": "2026-08-09",
+  "evidence_freeze_date": "2026-08-09",
+  "status": "locked held-out empirical record",
+  "parameter_lock": {"locked_before_held_out_evaluation": true, "post_hoc_retuning_performed": false},
+  "determinism": {"primary_seed": 20260809, "bootstrap_repetitions": 1000, "matched_random_repetitions": 1000},
+  "datasets": {
+    "challenge_2015": {"version":"1.0.0","held_out_n":153,"candidate_n":153,"true_candidates":54,"false_candidates":99,"retained_true_candidates":49,"retained_false_candidates":96,"published_manifest_sha256":"7432ea83a178a467d087746d6c1be4b9ea94ea374f30de1079d40d9bd5da0599"},
+    "ptb_xl": {"version":"1.0.3","held_out_n":2198,"candidate_n":887,"true_candidates":392,"false_candidates":495,"retained_true_candidates":300,"retained_false_candidates":386,"candidate_threshold":0.22080072720275812,"published_manifest_sha256":"b7224b92b341511ec3ceb13dc6652079b2c36a06504bcb49506f157f51dc695d"}
+  },
+  "software_environment": {"python":"3.12.13","numpy":"2.3.5","pandas":"2.3.3","scipy":"1.18.0","matplotlib":"3.10.8","wfdb":"4.3.0"},
+  "evidence_freeze_tests": {"total":34,"passed":34,"failed":0,"errors":0,"skipped":0}
+}

@@ -1,0 +1,6 @@
+figure,png,pdf,source_data,description,cost_convention
+Main 6,figure6_empirical_delta_q.png,figure6_empirical_delta_q.pdf,main_metrics.csv;bootstrap_intervals.csv,Held-out Delta_Q with cluster-bootstrap intervals,not applicable
+E2,figureE2_empirical_ppv_sensitivity.png,figureE2_empirical_ppv_sensitivity.pdf,strategy_controls.csv;main_metrics.csv,PPV versus operational-sensitivity tradeoff,not applicable
+E3,figureE3_empirical_cost_map.png,figureE3_empirical_cost_map.pdf,cost_grid.csv,Expected-loss comparison over false-positive/false-negative cost ratio,displayed slice W1/C_FN=1 and W0/C_FP=0; complete grid retained in source
+Main 7,figure7_empirical_policy_comparison.png,figure7_empirical_policy_comparison.pdf,strategy_controls.csv,Hard gate versus available held-out comparators,not applicable
+Main 8,figure8_operational_heterogeneity.png,figure8_operational_heterogeneity.pdf,transport_strata.csv,Delta_Q across prespecified alarm-type device and site strata,not applicable

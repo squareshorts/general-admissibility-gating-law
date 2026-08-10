@@ -1,0 +1,3 @@
+dataset,s_z_correlation_among_candidates,closest_s_threshold_disagreement,reason,candidate_only_disagreement,matched_s_threshold
+Challenge 2015,,,original detector score S is not released,,
+PTB-XL,-0.014790492029248007,0.1451319381255687,acceptance-rate threshold chosen on fold 9; disagreement evaluated on fold 10,0.3596392333709132,0.28945114215647566
